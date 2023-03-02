@@ -232,7 +232,7 @@
 <h1 id="the-machine-authentication-client-credentials">The Machine Authentication: Client Credentials</h1>
 <p>Let's suppose that you are building a microservice application or that you are build a service that will be invoked by another application. How do you ensure that only authorized services will be capable of access your resources?</p>
 <p>One method to control that access is through <strong>client credentials</strong>. Client Credentials is an <a href="https://www.rfc-editor.org/rfc/rfc6749#section-4.4">OAuth2</a> authentication grant intended to be used when a service wants to interact with other service with no user involved. It is typically used in backend to backend authentication and service platforms.
-The client credentials flow and usage, accordingly to the OAuth2 RFC, consists in 3 steps like the image below.</p>
+The client credentials authentication and usage usually follows this flow:</p>
 <!-- ```mermaid
 sequenceDiagram
   autonumber
