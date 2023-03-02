@@ -303,8 +303,8 @@ Then, following the image above:</p>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Get to Know</p>
-<p>More about Basic Authentication in this <a href="https://www.rfc-editor.org/rfc/rfc7617#section-2">link</a></p>
 </div>
+<p>More about Basic Authentication in this <a href="https://www.rfc-editor.org/rfc/rfc7617#section-2">link</a></p>
 <h3 id="token-response">Token Response</h3>
 <p>A successful response of the Authorization Server will be like:</p>
 <div class="language-http highlight"><pre><span></span><code><span id="__span-2-1"><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
@@ -324,6 +324,10 @@ Then, following the image above:</p>
 <li><code>expires_in</code> is the time interval where the access token is valid</li>
 <li><code>token_type</code> is the type of access token issued</li>
 </ul>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Authorization servers don't issue refresh tokens for client credentials due the lack of benefits once the refresh token grant has the same invocation complexity of the client credentials grant itself</p>
+</div>
 <p>Error response usually send status code 400 Bad Request following an error and a description in the body:</p>
 <div class="language-http highlight"><pre><span></span><code><span id="__span-3-1"><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">400</span> <span class="ne">Bad Request</span>
 </span><span id="__span-3-2"><a href="#__codelineno-3-2" id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json;charset=UTF-8</span>
@@ -496,16 +500,20 @@ Then we create a client passing a simple secret and tell it that we'll use it to
 <h3 id="auth0-client-credentials">Auth0 Client Credentials</h3>
 <ol>
 <li>Create an account in <a href="https://auth0.com/">Auth0</a></li>
-<li>Create an Example API in Auth0 console, like this:
-   <a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../../static/client_credentials_auth0_create_api.png"><img alt="Creating an API in Auth0" src="../../static/client_credentials_auth0_create_api.png"/></a></li>
-<li>Then create an <strong>Application</strong> and select its type as "Machine To Machine Applications", like this:
-   <a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../../static/client_credentials_auth0_create_app.png"><img alt="Creating an Application in Auth0" src="../../static/client_credentials_auth0_create_app.png"/></a></li>
+<li>Create an Example API in Auth0 console, like this:</li>
+</ol>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../../static/client_credentials_auth0_create_api.png"><img alt="Creating an API in Auth0" src="../../static/client_credentials_auth0_create_api.png" width="70%"/></a></p>
+<ol>
+<li>Then create an <strong>Application</strong> and select its type as "Machine To Machine Applications", like this:</li>
+</ol>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../../static/client_credentials_auth0_create_app.png"><img alt="Creating an Application in Auth0" src="../../static/client_credentials_auth0_create_app.png" width="70%"/></a></p>
+<ol>
 <li>Then select Example API</li>
 <li>At last, confirm the Application creation clicking in "Authorize" button</li>
 </ol>
 <p>Then, a quick start page will be prompted, showing how to perform the client authentication.
-In the Settings section, there will be two fields, one containing the <code>Client ID</code> and other containing the <code>Client Secret</code>. Their both will be used to perform our authentication.
-<a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../../static/client_credentials_auth0_app.png"><img alt="How to Locate Client ID and Secret" src="../../static/client_credentials_auth0_app.png"/></a></p>
+In the Settings section, there will be two fields, one containing the <code>Client ID</code> and other containing the <code>Client Secret</code>. Their both will be used to perform our authentication.</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../../static/client_credentials_auth0_app.png"><img alt="How to Locate Client ID and Secret" src="../../static/client_credentials_auth0_app.png" width="70%"/></a></p>
 <p>Using cURL, replace your Auth0 domain, client ID and Client Secret:</p>
 <div class="language-sh highlight"><pre><span></span><code><span id="__span-11-1"><a href="#__codelineno-11-1" id="__codelineno-11-1" name="__codelineno-11-1"></a>curl<span class="w"> </span>--request<span class="w"> </span>POST<span class="w"> </span><span class="se">\</span>
 </span><span id="__span-11-2"><a href="#__codelineno-11-2" id="__codelineno-11-2" name="__codelineno-11-2"></a><span class="w">  </span>--url<span class="w"> </span><span class="o">{{</span>YOUR_AUTH0_DOMAIN<span class="o">}}</span>/oauth/token<span class="w"> </span><span class="se">\</span>
