@@ -271,7 +271,7 @@ Then, following the image above:</p>
 <p>In practice, most authorization servers available out there supports client authentication, since it's covered in OAuth2 RFC. As example, we'll be using <a href="https://auth0.com/docs/get-started">Auth0</a> as a platform, and <a href="https://github.com/ory/hydra">Hydra</a> from Ory as a self-hosted alternative while it is an open source application.</p>
 <h3 id="ory-hydra-client-credentials-hands-on">Ory Hydra Client Credentials Hands-On</h3>
 <blockquote>
-<p>:ghost: Here will be using docker-compose, so, if you are not familiar with it, you can read more about it <a href="https://docs.docker.com/compose/">here</a>.</p>
+<p><img alt="👻" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f47b.svg" title=":ghost:"/> Here will be using docker-compose, so, if you are not familiar with it, you can read more about it <a href="https://docs.docker.com/compose/">here</a>.</p>
 </blockquote>
 <p>Ory Hydra is an open source Authorization Server developed by <a href="https://ory.sh">Ory</a>. So it can all authentication methods described by <a href="https://oauth.net/2/">OAuth 2.0</a> and even <a href="https://openid.net/connect/">OpenID Connect</a> (and a lot of other things that we will cover later).</p>
 <p>Firstly we create our Hydra service by running the following docker-compose:</p>
@@ -343,7 +343,7 @@ Then, following the image above:</p>
 </span><span id="__span-5-19"><a href="#__codelineno-5-19" id="__codelineno-5-19" name="__codelineno-5-19"></a><span class="w">      </span><span class="nt">salt</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">youReallyNeedToChangeThis</span>
 </span></code></pre></div>
 <blockquote>
-<p>:warning: All hydra examples in this article are for demonstration purpose only. For production use please follow the recommendations at <a href="https://www.ory.sh/docs/hydra/security-architecture">Security Architecture</a></p>
+<p><img alt="⚠" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/26a0.svg" title=":warning:"/> All hydra examples in this article are for demonstration purpose only. For production use please follow the recommendations at <a href="https://www.ory.sh/docs/hydra/security-architecture">Security Architecture</a></p>
 </blockquote>
 <p>So, now start the Hydra service running the <code>docker-compose up</code> command.</p>
 <p>Once we have our service running, we need a way to create our client to perform our authentication. Ory offers SDKs for most of their components, including <a href="https://www.ory.sh/docs/hydra/sdk/overview">Hydra's</a>. Here we'll use the Javascript SDK.</p>
